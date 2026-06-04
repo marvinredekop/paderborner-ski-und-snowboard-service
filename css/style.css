@@ -506,6 +506,18 @@ a {
     border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* Auf mobilen Geräten: Toggle beim Scrollen sichtbar halten */
+@media (max-width: 768px) {
+    .sport-toggle {
+        position: sticky;
+        top: 100px; /* unter dem festen Header (90px) etwas Abstand */
+        z-index: 60;
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
 .sport-toggle-btn {
     padding: 12px 28px;
     border: none;
