@@ -536,8 +536,10 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    align-items: start;
-    justify-items: center;
+    /* Gleich hohe Karten: Zeilen aufteilen und Items strecken */
+    align-items: stretch;
+    justify-items: stretch;
+    grid-auto-rows: 1fr;
 }
 
 .pricing-grid .price-card:nth-child(4),
