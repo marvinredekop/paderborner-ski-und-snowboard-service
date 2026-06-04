@@ -537,6 +537,18 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-items: start;
+    justify-items: center;
+}
+
+.pricing-grid .price-card:nth-child(4),
+.pricing-grid .price-card:nth-child(5) {
+    max-width: 100%;
+}
+
+@supports (grid-template-columns: subgrid) {
+    .pricing-grid {
+        justify-content: center;
+    }
 }
 
 .price-card {
