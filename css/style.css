@@ -697,6 +697,29 @@ a {
     grid-column: 1 / -1;
 }
 
+/* Wenn nur eine Kontakt-Card vorhanden ist: zentrieren und mehr Platz geben */
+.contact-grid .glass-card {
+    padding: 48px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.contact-grid .glass-card:only-child {
+    grid-column: 1 / -1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-grid .glass-card {
+        max-width: 100%;
+        padding: 32px;
+    }
+}
+
 .contact-form {
     margin-top: 24px;
     display: flex;
