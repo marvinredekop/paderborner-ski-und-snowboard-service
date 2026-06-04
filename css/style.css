@@ -490,6 +490,46 @@ a {
     text-align: center;
 }
 
+/* ── Sport Toggle ── */
+
+.sport-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 40px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 4px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.sport-toggle-btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sport-toggle-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,174,239,0.3);
+}
+
+.sport-toggle-btn:hover:not(.active) {
+    color: var(--text);
+    background: rgba(255,255,255,0.06);
+}
+
 /* ── Pricing Grid ── */
 
 .pricing-grid {

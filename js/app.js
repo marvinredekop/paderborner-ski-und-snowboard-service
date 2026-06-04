@@ -60,6 +60,38 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Sport toggle (Ski / Snowboard pricing)
+    const toggleBtns = document.querySelectorAll('.sport-toggle-btn');
+
+    if (toggleBtns.length) {
+
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const sport = btn.dataset.sport;
+                const label = sport === 'ski' ? 'Ski' : 'Snowboard';
+
+                document.querySelectorAll('.price-value[data-ski]').forEach(el => {
+                    const price = el.dataset[sport];
+                    el.textContent = price + '€';
+                });
+
+                document.querySelectorAll('.price-card a[data-service]').forEach(link => {
+                    const serviceName = link.dataset.service;
+                    const card = link.closest('.price-card');
+                    const priceEl = card.querySelector('.price-value');
+                    const price = priceEl.dataset[sport];
+                    link.href = 'kontakt.html?service=' +
+                        encodeURIComponent(serviceName + ' (' + label + ')') +
+                        '&preis=' + encodeURIComponent(price + '€');
+                });
+            });
+        });
+    }
+
     // Ski Intro Animation (homepage only, first visit per session)
     const intro = document.getElementById('skiIntro');
     if (intro) {
