@@ -35,15 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Auto-scroll past hero on subpages
-    const pageHero = document.querySelector('.page-hero');
-    if (pageHero) {
-        const firstSection = pageHero.nextElementSibling;
-        if (firstSection) {
-            firstSection.scrollIntoView({ behavior: 'instant' });
-        }
-    }
-
     // Pre-fill contact form when coming from pricing page
     const params = new URLSearchParams(window.location.search);
     const service = params.get('service');
