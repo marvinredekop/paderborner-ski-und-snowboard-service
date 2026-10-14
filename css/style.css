@@ -652,6 +652,11 @@ a {
     border-radius: 14px;
 }
 
+.service-image-placeholder:has(img),
+.price-image-placeholder:has(img) {
+    border: none;
+}
+
 /* ── Highlight / CTA Section ── */
 
 .highlight-section {
